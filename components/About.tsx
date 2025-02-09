@@ -16,15 +16,15 @@ export default function About({
       <Divider anchor={title} />
       <Heading text={title} />
       <div className="dark:text-slate-300">
-        <p className="my-4 text-2xl font-medium">Hi there 🙋</p>
+        <p className="my-4 text-2xl font-medium">你好呀</p>
         <p className="my-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          我是Jerry，走在網站工程師路上的圖資人。主要專注在資訊組織（也就是分類法啦～），學生時期也稍微研究過期刊相關議題，偶爾還是喜歡瞭解一下學界現況。
         </p>
         <p className="my-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          對寫程式的態度是不討厭也不喜歡，以能解決需求為主。偶爾會想把資訊組織的概念帶回來寫程式，但還在嘗試中😛
         </p>
         <p className="my-4">
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Github中放的主要是練習用的，所以大多沒有完成，還在摸索想做的內容方向。
         </p>
       </div>
     </>
