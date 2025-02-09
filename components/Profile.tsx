@@ -17,7 +17,7 @@ const map: {
   organization: { icon: faBuilding },
   location: { icon: faMapMarkerAlt },
   email: { icon: faEnvelope },
-  url: { icon: faLink }
+  url: { icon: faLink },
 };
 interface ProfileProps {
   enabled: boolean;
@@ -25,6 +25,7 @@ interface ProfileProps {
   name: string;
   authority: {
     [someStrKeyWhichIsDynamic: string]: {
+      id: string,
       text: string;
       enabled: boolean;
     };
@@ -50,12 +51,13 @@ export default function Profile({
             {name}
           </div>
           <div className="flex flex-col my-4 text-sm">
-            {Object.keys(authority).map((property, index) => {
+            {Object.keys(authority).map((property) => {
               const { text } = authority[property];
               const { icon } = map[property];
+              const { id } = authority[property].id;
               return authority[property].enabled ? (
                 text && (
-                  <div key={index} className="flex items-center">
+                  <div key={id} className="flex items-center">
                     <div>
                       <FontAwesomeIcon icon={icon} className="w-3 mx-2" />
                     </div>
