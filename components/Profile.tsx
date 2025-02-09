@@ -25,7 +25,6 @@ interface ProfileProps {
   name: string;
   authority: {
     [someStrKeyWhichIsDynamic: string]: {
-      id: string,
       text: string;
       enabled: boolean;
     };
