@@ -51,10 +51,10 @@ export default function Profile({
             {name}
           </div>
           <div className="flex flex-col my-4 text-sm">
-            {Object.keys(authority).map((property, index) => {
+            {Object.keys(authority).map((property) => {
               const { text } = authority[property];
               const { icon } = map[property];
-              const { id } = index;
+              const { id } = authority[property].id;
               return authority[property].enabled ? (
                 text && (
                   <div key={id} className="flex items-center">
