@@ -3,45 +3,65 @@
   "theme": {
     "mode": "dark",
     "light": {
-      "background": "#d1d5db"
+      "background": "#fefae0"
     },
     "dark": {
-      "background": "#111827"
+      "background": "#212224"
     }
   },
   "meta": {
-    "author": "King Nyan II",
-    "title": "King Nyan II's Profile",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "image": "https://github.com/kingnyan2.png"
+    "author": "Jerry Yeh",
+    "title": "Jerry's Profile",
+    "description": "test",
+    "image": "https://avatars.githubusercontent.com/u/87906523?v=4"
   },
   "components": {
     "profile": {
       "enabled": true,
-      "avatar": "https://github.com/kingnyan2.png",
-      "name": "test",
-      "organization": "Buckingnyan Palace",
-      "location": "The United Kingdom of Great Nyan",
-      "email": "kingnyan2@gmail.com",
-      "url": "https://kingnyan2.com",
+      "avatar": "https://avatars.githubusercontent.com/u/87906523?v=4",
+      "name": "Jerry Yeh",
+      "authority": {
+        "organization": {
+          "text": "Buckingnyan Palace",
+          "enabled": false
+        },
+        "location": {
+          "text": "The United Kingdom of Great Nyan",
+          "enabled": false
+        },
+        "email": {
+          "text": "jerry40522@gmail.com",
+          "enabled": true
+        },
+        "url": {
+          "text": "https://kingnyan2.com",
+          "enabled": false
+        }
+      },
       "socialLinks": {
         "github": {
-          "id": "kingnyan2"
+          "id": "jerryyehself",
+          "enabled": true
         },
         "facebook": {
-          "id": "kingnyan2"
+          "id": "kingnyan2",
+          "enabled": false
         },
         "linkedin": {
-          "id": "kingnyan2"
+          "id": "kingnyan2",
+          "enabled": false
         },
         "instagram": {
-          "id": "kingnyan2"
+          "id": "jerry29_new_life",
+          "enabled": true
         },
         "telegram": {
-          "id": "kingnyan2"
+          "id": "kingnyan2",
+          "enabled": false
         },
         "twitter": {
-          "id": "kingnyan2"
+          "id": "kingnyan2",
+          "enabled": false
         }
       }
     },
@@ -72,7 +92,7 @@
       "id": "G-RPFTNCY0Q6"
     },
     "projectList": {
-      "enabled": true,
+      "enabled": false,
       "title": "Projects",
       "limit": 3,
       "items": [
@@ -91,7 +111,7 @@
       ]
     },
     "articleList": {
-      "enabled": true,
+      "enabled": false,
       "title": "Articles",
       "limit": 10,
       "source": "https://memochou1993.github.io/nyan-profile/atom.xml",

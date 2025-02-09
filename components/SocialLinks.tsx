@@ -30,6 +30,7 @@ interface SocialLinksProps {
   items: {
     [someStrKeyWhichIsDynamic: string]: {
       id: string;
+      enabled: boolean;
     };
   };
 }
@@ -43,14 +44,15 @@ export default function SocialLinks({
       {Object.keys(items).map((type) => {
         const { id } = items[type];
         const { icon, link } = map[type];
-        return (
+        return items[type].enabled ? (
           id && (
-            <a key={type} href={`${link}/${id}`} target="_blank" rel="noreferrer">
+            <a key={type} href={`${link}/${id}`
+            } target="_blank" rel="noreferrer" >
               <FontAwesomeIcon icon={icon} className="w-6 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100" />
             </a>
           )
-        );
+        ) : true;
       })}
-    </div>
+    </div >
   );
 }

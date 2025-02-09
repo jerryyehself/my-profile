@@ -9,14 +9,26 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import SocialLinks from './SocialLinks';
 
+const map: {
+  [someStrKeyWhichIsDynamic: string]: {
+    icon: any
+  },
+} = {
+  organization: { icon: faBuilding },
+  location: { icon: faMapMarkerAlt },
+  email: { icon: faEnvelope },
+  url: { icon: faLink }
+};
 interface ProfileProps {
   enabled: boolean;
   avatar: string;
   name: string;
-  organization: string;
-  location: string;
-  email: string;
-  url: string;
+  authority: {
+    [someStrKeyWhichIsDynamic: string]: {
+      text: string;
+      enabled: boolean;
+    };
+  };
   socialLinks: any;
 }
 
@@ -24,10 +36,7 @@ export default function Profile({
   enabled,
   avatar,
   name,
-  organization,
-  location,
-  email,
-  url,
+  authority,
   socialLinks,
 }: ProfileProps) {
   return enabled ? (
@@ -41,50 +50,22 @@ export default function Profile({
             {name}
           </div>
           <div className="flex flex-col my-4 text-sm">
-            {organization && (
-              <div className="flex items-center">
-                <div>
-                  <FontAwesomeIcon icon={faBuilding} className="w-3 mx-2" />
-                </div>
-                <div>
-                  {organization}
-                </div>
-              </div>
-            )}
-            {location && (
-              <div className="flex items-center">
-                <div>
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="w-3 mx-2" />
-                </div>
-                <div>
-                  {location}
-                </div>
-              </div>
-            )}
-            {email && (
-              <div className="flex items-center">
-                <div>
-                  <FontAwesomeIcon icon={faEnvelope} className="w-3 mx-2" />
-                </div>
-                <div>
-                  <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
-                    {email}
-                  </a>
-                </div>
-              </div>
-            )}
-            {url && (
-              <div className="flex items-center">
-                <div>
-                  <FontAwesomeIcon icon={faLink} className="w-3 mx-2" />
-                </div>
-                <div>
-                  <a href={url} target="_blank" rel="noreferrer">
-                    {url}
-                  </a>
-                </div>
-              </div>
-            )}
+            {Object.keys(authority).map((property, index) => {
+              const { text } = authority[property];
+              const { icon } = map[property];
+              return authority[property].enabled ? (
+                text && (
+                  <div key={index} className="flex items-center">
+                    <div>
+                      <FontAwesomeIcon icon={icon} className="w-3 mx-2" />
+                    </div>
+                    <div>
+                      {text}
+                    </div>
+                  </div>
+                )
+              ) : true;
+            })}
           </div>
           <SocialLinks items={socialLinks} />
         </div>
