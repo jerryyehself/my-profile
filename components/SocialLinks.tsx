@@ -10,6 +10,7 @@ import {
   faInstagram,
   faTelegram,
   faTwitter,
+  faThreads,
 } from '@fortawesome/free-brands-svg-icons';
 
 const map: {
@@ -18,12 +19,13 @@ const map: {
     link: string,
   },
 } = {
-  github: { icon: faGithub, link: 'https://github.com' },
-  facebook: { icon: faFacebook, link: 'https://www.facebook.com' },
-  linkedin: { icon: faLinkedin, link: 'https://linkedin.com/in' },
-  instagram: { icon: faInstagram, link: 'https://www.instagram.com' },
-  telegram: { icon: faTelegram, link: 'https://telegram.me' },
-  twitter: { icon: faTwitter, link: 'https://twitter.com' },
+  github: { icon: faGithub, link: 'https://github.com/' },
+  facebook: { icon: faFacebook, link: 'https://www.facebook.com/' },
+  linkedin: { icon: faLinkedin, link: 'https://linkedin.com/in/' },
+  instagram: { icon: faInstagram, link: 'https://www.instagram.com/' },
+  telegram: { icon: faTelegram, link: 'https://telegram.me/' },
+  twitter: { icon: faTwitter, link: 'https://twitter.com/' },
+  threads: { icon: faThreads, link: 'https://threads.com/@' },
 };
 
 interface SocialLinksProps {
@@ -41,9 +43,9 @@ export default function SocialLinks({
   return (
     <div className="flex items-center justify-center">
       {Object.keys(items).map((type) => {
-        const { id } = items[type];
+        const { id, enabled } = items[type];
         const { icon, link } = map[type];
-        return items[type].enabled ? (
+        return enabled ? (
           id && (
             <a key={type} href={`${link}${id}`} target="_blank" rel="noreferrer" className="mx-2">
               <FontAwesomeIcon icon={icon} className="w-6 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100" />

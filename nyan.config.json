@@ -62,6 +62,10 @@
         "twitter": {
           "id": "kingnyan2",
           "enabled": false
+        },
+        "threads": {
+          "id": "kingnyan2",
+          "enabled": false
         }
       }
     },
